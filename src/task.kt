@@ -44,7 +44,7 @@ open class Task(var title:String, var description: String,){
 
 class PersonalTask(title:String, description:String, var place: String ) : Task (title, description){
 
-    constructor(): this( readTitleFromConsole(),readDescriptionFromConsole(), readPLaceFromConsole())
+    constructor(): this( readInfoFromConsole("title"),readInfoFromConsole("description"), readInfoFromConsole("place"))
     override fun displayCongratulations(){
         println("You are becoming your best self by achieving $title")
     }
@@ -54,6 +54,7 @@ class PersonalTask(title:String, description:String, var place: String ) : Task 
 
 class ProfessionalTask(title:String, description:String,  var place: String ) : Task (title, description){
 
+    constructor(): this( readInfoFromConsole("title"),readInfoFromConsole("description"), readInfoFromConsole("place"))
     override fun displayCongratulations(){
         println("You are a terrific professional! great job for finishing $title! ")
     }
@@ -63,6 +64,7 @@ class ProfessionalTask(title:String, description:String,  var place: String ) : 
 
 class AcademicTask(title:String, description:String,   var place: String ) : Task (title, description){
 
+    constructor(): this( readInfoFromConsole("title"),readInfoFromConsole("description"), readInfoFromConsole("place"))
     override fun displayCongratulations(){
         println("You are learning so much! good job for finishing $title!")
     }
@@ -70,12 +72,18 @@ class AcademicTask(title:String, description:String,   var place: String ) : Tas
 }
 
 class FinancialTask(title:String, description:String, var place: String ) : Task (title, description){
+
+    constructor(): this( readInfoFromConsole("title"),readInfoFromConsole("description"), readInfoFromConsole("place"))
+
     override fun displayCongratulations(){
         println("This is very important step for your financial independence! you achieved $title")
     }
 }
 
 class CreativeTask(title:String, description:String,  var place: String ) : Task (title, description){
+
+    constructor(): this( readInfoFromConsole("title"),readInfoFromConsole("description"), readInfoFromConsole("place"))gi
+
     override fun displayCongratulations(){
         println("This was a great idea! Congratulations finishing $title")
     }
