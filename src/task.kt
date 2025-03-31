@@ -3,6 +3,29 @@ import java.time.LocalDate
 
 // This class will be the template that other specialized classes will work with
 // it takes a description and by default they are not compleated
+
+fun readInfoFromConsole(info):String {
+    print("Please enter the $info for this task")
+}
+
+fun readTitleFromConsole():String{
+    print("Please enter the title for this task: ")
+    val newTitle :String = readLine() ?: "A very important task"
+    return newTitle
+
+}
+fun readDescriptionFromConsole():String{
+    print("Please enter the description for this task: ")
+    val newDescription : String = readLine() ?: "-No description Provided"
+    return newDescription
+}
+
+fun readPLaceFromConsole():String{
+    print("PLease enter the Place for this task: ")
+    val newPlace : String = readLine() ?: "No place was added"
+    return newPlace
+}
+
 open class Task(var title:String, var description: String,){
 
     // The task also creates an inmutable variable to create the creation time
@@ -36,9 +59,11 @@ open class Task(var title:String, var description: String,){
 
 class PersonalTask(title:String, description:String, var place: String ) : Task (title, description){
 
+    constructor(): this( readTitleFromConsole(),readDescriptionFromConsole(), readPLaceFromConsole())
     override fun displayCongratulations(){
         println("You are becoming your best self by achieving $title")
     }
+
 
 }
 
