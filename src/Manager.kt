@@ -14,7 +14,7 @@ class Manager {
             println("3. Create a Academic Task")
             println("4. Create a Financial Task")
             println("5. Create a Creative Task")
-//            println("6. Display all tasks ")
+            println("6. Display all tasks ")
 //            println("7. Change the status of a task")
 //            println("8. Print all information of a task")
             println("9. Exit")
@@ -27,7 +27,7 @@ class Manager {
                 "3" ->createTask(academicTask)
                 "4" ->createTask(financialTask)
                 "5" ->createTask(creativeTask)
-//                "6" ->
+                "6" -> displayAll(taskList)
 //                "7" ->
 //                "8" ->
                 "9" ->{
@@ -48,8 +48,15 @@ class Manager {
             creativeTask -> CreativeTask()
             else -> throw IllegalArgumentException("Invalid task type")
         }
-
         taskList.add(newTask)
+    }
 
+    fun displayAll(taskList:MutableList<Task>){
+        var index = 1
+        for(task in taskList){
+            print("$index ")
+            task.displayDetails()
+            index++
+        }
     }
 }
