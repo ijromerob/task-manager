@@ -61,11 +61,12 @@ class Manager {
     fun changeStatusTask(taskList:MutableList<Task>){
 
 
-        while (true){
-        print("Please enter the number of task you want to change the status ")
-        var index : String = readLine()?: "not a number"
         var convertedIndex: Int
+        var index : String
+        while (true){
             try {
+                print("Please enter the number of task you want to change the status ")
+                index = readLine()?: "not a number"
                 convertedIndex = index.toInt() - 1
                 taskList[convertedIndex].changeStatus()
                 break
