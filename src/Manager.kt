@@ -15,9 +15,8 @@ class Manager {
             println("4. Create a Financial Task")
             println("5. Create a Creative Task")
             println("6. Display all tasks ")
-//            println("7. Change the status of a task")
-//            println("8. Print all information of a task")
-            println("9. Exit")
+            println("7. Change the status of a task")
+            println("8. Exit")
             print("Enter your choice ")
             var choice = readLine()
 
@@ -28,9 +27,8 @@ class Manager {
                 "4" ->createTask(financialTask)
                 "5" ->createTask(creativeTask)
                 "6" -> displayAll(taskList)
-//                "7" ->
-//                "8" ->
-                "9" ->{
+                "7" ->changeStatusTask(taskList)
+                "8" ->{
                     println("Exiting Program")
                     break
                 }
@@ -58,5 +56,24 @@ class Manager {
             task.displayDetails()
             index++
         }
+    }
+
+    fun changeStatusTask(taskList:MutableList<Task>){
+
+
+        while (true){
+        print("Please enter the number of task you want to change the status ")
+        var index : String = readLine()?: "not a number"
+        var convertedIndex: Int
+            try {
+                convertedIndex = index.toInt() - 1
+                taskList[convertedIndex].changeStatus()
+                break
+            } catch (error: Error) {
+                println(error)
+                println("Please try again")
+            }
+        }
+
     }
 }

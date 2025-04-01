@@ -42,6 +42,7 @@ open class Task(var title:String, var description: String, var place: String){
         println("Title: $title - Description: $description - Place: $place - Creation Date: $creationDate - Completed Date: $completedDate")
     }
 
+
     // This method provides a generic congratulations message when something is finished
     open fun displayCongratulations(): Unit {
         println("Congratulations for the completion!")
