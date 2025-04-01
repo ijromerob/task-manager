@@ -1,10 +1,15 @@
 class Manager {
+//    initializes a tasklist
     val taskList: MutableList<Task> = mutableListOf()
+
+//    Initializes values that will work to ensure correct assignment of when
     val personalTask:String = "Personal"
     val professionalTask:String = "Professional"
     val academicTask:String = "Academic"
     val financialTask:String = "Financial"
     val creativeTask:String = "Creative"
+
+//    Function start emcopases the whole experience that the user will see in the console
     fun start(){
 
         while(true){
@@ -20,7 +25,9 @@ class Manager {
             print("Enter your choice ")
             var choice = readLine()
 
+//            with When operator the correct create task is performed
             when(choice){
+
                 "1" ->createTask(personalTask)
                 "2" ->createTask(professionalTask)
                 "3" ->createTask(academicTask)
@@ -37,6 +44,7 @@ class Manager {
 
         }
     }
+//    ensures to create a correct task and to add it to the task list
     fun createTask(choice: String){
         val newTask: Task = when(choice){
             personalTask -> PersonalTask()
@@ -49,6 +57,7 @@ class Manager {
         taskList.add(newTask)
     }
 
+//    this function iterates through the list of tasks and displays them in order
     fun displayAll(taskList:MutableList<Task>){
         var index = 1
         for(task in taskList){
@@ -58,6 +67,7 @@ class Manager {
         }
     }
 
+//    The status task changes the status of one task based on the position of the task in the tasklist
     fun changeStatusTask(taskList:MutableList<Task>){
 
 

@@ -38,12 +38,13 @@ open class Task(var title:String, var description: String, var place: String){
 
     }
 
+//    This function displays the importan details of the task
     fun displayDetails(){
         println("Title: $title - Description: $description - Place: $place - Creation Date: $creationDate - Completed Date: $completedDate")
     }
 
 
-    // This method provides a generic congratulations message when something is finished
+    // This method provides a generic congratulations message when something is finished which is overwritten in each class
     open fun displayCongratulations(): Unit {
         println("Congratulations for the completion!")
     }
@@ -51,6 +52,7 @@ open class Task(var title:String, var description: String, var place: String){
 
 class PersonalTask(title:String, description:String, place: String ) : Task (title, description, place){
 
+//    Ths constructor allows the code to use it without parameters and to use prompts in the creation of the object
     constructor():this(readInfoFromConsole("title"), readInfoFromConsole("description"), readInfoFromConsole("place"))
 
     override fun displayCongratulations(){
@@ -61,6 +63,7 @@ class PersonalTask(title:String, description:String, place: String ) : Task (tit
 }
 
 class ProfessionalTask(title:String, description:String,  place: String ) : Task (title, description, place){
+//    Ths constructor allows the code to use it without parameters and to use prompts in the creation of the object
 
     constructor():this(readInfoFromConsole("title"), readInfoFromConsole("description"), readInfoFromConsole("place"))
 
@@ -72,6 +75,7 @@ class ProfessionalTask(title:String, description:String,  place: String ) : Task
 }
 
 class AcademicTask(title:String, description:String,  place: String ) : Task (title, description, place){
+//    Ths constructor allows the code to use it without parameters and to use prompts in the creation of the object
 
     constructor():this(readInfoFromConsole("title"), readInfoFromConsole("description"), readInfoFromConsole("place"))
 
@@ -82,6 +86,7 @@ class AcademicTask(title:String, description:String,  place: String ) : Task (ti
 }
 
 class FinancialTask(title:String, description:String,place: String ) : Task (title, description, place){
+//    Ths constructor allows the code to use it without parameters and to use prompts in the creation of the object
 
     constructor():this(readInfoFromConsole("title"), readInfoFromConsole("description"), readInfoFromConsole("place"))
 
@@ -91,6 +96,7 @@ class FinancialTask(title:String, description:String,place: String ) : Task (tit
 }
 
 class CreativeTask(title:String, description:String, place: String ) : Task (title, description, place){
+//    Ths constructor allows the code to use it without parameters and to use prompts in the creation of the object
 
     constructor():this(readInfoFromConsole("title"), readInfoFromConsole("description"), readInfoFromConsole("place"))
 
