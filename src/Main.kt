@@ -1,13 +1,6 @@
 fun main() {
-        val personal = PersonalTask("title", "description", "place")
+        val theManager:Manager = Manager()
 
-        var isGood = personal.isCompleted
+        theManager.start()
 
-        println("lets see $isGood")
-
-        personal.changeStatus()
-
-        isGood = personal.isCompleted
-
-        println("lets see $isGood")
 }
